@@ -29,11 +29,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       
       breedSelectEl.addEventListener('change', async () => {
         loaderEl.classList.remove('hidden');
-        catInfoDivEl.style.backgroundColor = 'ghostwhite';
 
       try {
         const selectedBreedId = breedSelectEl.value;
-
         const catInfo = await fetchCatByBreed(selectedBreedId);
         createMarkup(catInfo);
       } catch (error) {

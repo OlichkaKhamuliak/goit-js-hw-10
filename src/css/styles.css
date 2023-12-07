@@ -8,14 +8,13 @@ img {
 p, h1 {
     margin: 0;
 }
-.hidden {
-    display: none;
-}
+
 @media only screen and (min-width: 320px) {
     .cat-info {
         display: flex;
         flex-direction: column;
         padding: 10px; 
+        background-color: ghostwhite;
         align-items: center;
         max-width: 500px;
         margin: 0 auto;
@@ -106,3 +105,6 @@ p, h1 {
         }
       }
       
+      .hidden {
+        display: none;
+    }
