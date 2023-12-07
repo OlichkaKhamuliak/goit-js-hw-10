@@ -23,12 +23,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         ]
       })
-          
+      
       breedSelectEl.classList.remove('hidden');
       loaderEl.classList.add('hidden');
-
+      
       breedSelectEl.addEventListener('change', async () => {
         loaderEl.classList.remove('hidden');
+        catInfoDivEl.style.backgroundColor = 'ghostwhite';
 
       try {
         const selectedBreedId = breedSelectEl.value;
