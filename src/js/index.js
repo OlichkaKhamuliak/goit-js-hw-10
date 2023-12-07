@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     breedSelectEl.addEventListener('change', async () => {
       catInfoDivEl.innerHTML = '';
+      catInfoDivEl.classList.add('hidden');
       loaderEl.classList.remove('hidden');
 
       try {
