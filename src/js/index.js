@@ -10,25 +10,25 @@ const loaderEl = document.querySelector('.loader')
 const catInfoDivEl = document.querySelector('.cat-info')
 
 document.addEventListener("DOMContentLoaded", async () => {
-    try {
-      loaderEl.classList.remove('hidden');
-      const breeds = await fetchBreeds();
+  try {
+    loaderEl.classList.remove('hidden');
+    const breeds = await fetchBreeds();
           
-      new SlimSelect({
-        select: breedSelectEl,
-        data: [{
-          'placeholder': true,
-          'text': 'Choose a cat breed' },
-          ...breeds.map(breed => ({value: breed.id, text: breed.name})),
+    new SlimSelect({
+      select: breedSelectEl,
+      data: [{
+        'placeholder': true,
+        'text': 'Choose a cat breed' },
+        ...breeds.map(breed => ({value: breed.id, text: breed.name})),
+      ]
+    })
+          
+    breedSelectEl.classList.remove('hidden');
+    loaderEl.classList.add('hidden');
 
-        ]
-      })
-      
-      breedSelectEl.classList.remove('hidden');
-      loaderEl.classList.add('hidden');
-      
-      breedSelectEl.addEventListener('change', async () => {
-        loaderEl.classList.remove('hidden');
+    breedSelectEl.addEventListener('change', async () => {
+      catInfoDivEl.innerHTML = '';
+      loaderEl.classList.remove('hidden');
 
       try {
         const selectedBreedId = breedSelectEl.value;
