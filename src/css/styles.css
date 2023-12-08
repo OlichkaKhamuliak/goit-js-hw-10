@@ -1,3 +1,8 @@
+:root {
+    --ss-primary-color: #614cd8 !important;
+    --ss-focus-color: #614cd8 !important;
+}
+
 img {
     display: block;
     max-width: 100%;
